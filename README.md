@@ -55,6 +55,7 @@ export default NextAuth({
       clientId: process.env.AUTH0_ID,
       clientSecret: process.env.AUTH0_SECRET,
       issuer: process.env.AUTH0_ISSUER,
+
 ```
 
 ## Build Warnings
