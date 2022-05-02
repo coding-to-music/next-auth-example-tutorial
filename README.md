@@ -15,7 +15,6 @@ https://github.com/nextauthjs/next-auth-example
 ## Environment Values
 
 ```java
-
 export default NextAuth({
   // https://next-auth.js.org/configuration/providers/oauth
   providers: [
