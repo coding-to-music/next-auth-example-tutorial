@@ -1,5 +1,5 @@
 {
-  "name": "next-auth-example",
+  "name": "next-auth-example-tutorial",
   "version": "0.0.0",
   "private": true,
   "description": "An example project for NextAuth.js",
@@ -9,11 +9,19 @@
   },
   "homepage": "https://next-auth-example.vercel.app",
   "main": "",
+  "engines": {
+    "node": "14"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    ".next/cache"
+  ],
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "types": "tsc --noEmit"
+    "types": "tsc --noEmit",
+    "deploy": "git add . && git commit -m Build && git push && git push heroku && heroku logs --tail --remote heroku"
   },
   "author": "Iain Collins <me@iaincollins.com>",
   "contributors": [

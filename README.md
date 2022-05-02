@@ -1,3 +1,74 @@
+# next-auth-example-tutorial
+
+# 🚀 Javascript full-stack 🚀
+
+https://github.com/coding-to-music/next-auth-example-tutorial
+
+https://next-auth-example-tutorial.vercel.app
+
+https://next-auth-example-tutorial.herokuapp.com
+
+by Next Auth - Getting Started https://next-auth.js.org/getting-started/example
+
+https://github.com/nextauthjs/next-auth-example
+
+## Environment Values
+
+```java
+export default NextAuth({
+  // https://next-auth.js.org/configuration/providers/oauth
+  providers: [
+    /* EmailProvider({
+         server: process.env.EMAIL_SERVER,
+         from: process.env.EMAIL_FROM,
+       }),
+    // Temporarily removing the Apple provider from the demo site as the
+    // callback URL for it needs updating due to Vercel changing domains
+
+    Providers.Apple({
+      clientId: process.env.APPLE_ID,
+      clientSecret: {
+        appleId: process.env.APPLE_ID,
+        teamId: process.env.APPLE_TEAM_ID,
+        privateKey: process.env.APPLE_PRIVATE_KEY,
+        keyId: process.env.APPLE_KEY_ID,
+      },
+    }),
+    */
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_ID,
+      clientSecret: process.env.FACEBOOK_SECRET,
+    }),
+    GithubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+    }),
+    TwitterProvider({
+      clientId: process.env.TWITTER_ID,
+      clientSecret: process.env.TWITTER_SECRET,
+    }),
+    Auth0Provider({
+      clientId: process.env.AUTH0_ID,
+      clientSecret: process.env.AUTH0_SECRET,
+      issuer: process.env.AUTH0_ISSUER,
+```
+
+## Build Warnings
+
+```java
+
+```
+
+## Build Errors
+
+```java
+
+```
+
 > The example repository is maintained from a [monorepo](https://github.com/nextauthjs/next-auth/tree/main/apps/example-nextjs). Pull Requests should be opened against [`nextauthjs/next-auth`](https://github.com/nextauthjs/next-auth).
 
 <p align="center">
@@ -37,7 +108,7 @@ NextAuth.js is an easy to implement, full-stack (client/server) open source auth
 
 Go to [next-auth.js.org](https://next-auth.js.org) for more information and documentation.
 
-> *NextAuth.js is not officially associated with Vercel or Next.js.*
+> _NextAuth.js is not officially associated with Vercel or Next.js._
 
 ## Getting Started
 
@@ -67,8 +138,8 @@ You **can** skip configuring a database and come back to it later if you want.
 
 For more information about setting up a database, please check out the following links:
 
-* Docs: [next-auth.js.org/adapters/overview](https://next-auth.js.org/adapters/overview)
-* Adapters Repo: [nextauthjs/adapters](https://github.com/nextauthjs/adapters)
+- Docs: [next-auth.js.org/adapters/overview](https://next-auth.js.org/adapters/overview)
+- Adapters Repo: [nextauthjs/adapters](https://github.com/nextauthjs/adapters)
 
 ### 3. Configure Authentication Providers
 
@@ -76,9 +147,9 @@ For more information about setting up a database, please check out the following
 
 2. When setting up OAuth, in the developer admin page for each of your OAuth services, you should configure the callback URL to use a callback path of `{server}/api/auth/callback/{provider}`.
 
-  e.g. For Google OAuth you would use: `http://localhost:3000/api/auth/callback/google`
+e.g. For Google OAuth you would use: `http://localhost:3000/api/auth/callback/google`
 
-  A list of configured providers and their callback URLs is available from the endpoint `/api/auth/providers`. You can find more information at https://next-auth.js.org/configuration/providers/oauth
+A list of configured providers and their callback URLs is available from the endpoint `/api/auth/providers`. You can find more information at https://next-auth.js.org/configuration/providers/oauth
 
 3. You can also choose to specify an SMTP server for passwordless sign in via email.
 
@@ -112,3 +183,38 @@ Follow the [Deployment documentation](https://next-auth.js.org/deployment)
 
 ISC
 
+## GitHub
+
+```java
+git init
+git add .
+git remote remove origin
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coding-to-music/next-auth-example-tutorial.git
+git push -u origin main
+```
+
+## Heroku
+
+```java
+heroku create next-auth-example-tutorial
+```
+
+## Heroku MongoDB Environment Variables
+
+```java
+heroku config:set
+
+heroku config:set MONGODB_URI="your value"
+```
+
+## Push to Heroku
+
+```java
+git push heroku
+
+# or
+
+npm run deploy
+```
